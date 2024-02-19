@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    image: assessment
+    container_name: project_assessment
+    ports:
+      - "8000:80"
+    depends_on:
+      - mongodb
+  mongodb:
+    image: "mongo"
+    container_name: mongodb
+    ports:
+      - "27017:27017"
