@@ -8,8 +8,8 @@ services:
       - "8000:80"
     depends_on:
       - mongodb
-    environment:
-      - OPENAI_API_KEY=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
+    env_file:
+      - .env 
   mongodb:
     image: "mongo"
     container_name: mongodb
