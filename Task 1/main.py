@@ -70,6 +70,8 @@ async def create_prompt(conversation_id: str, prompt: Prompt):
 def anonymize_data(data):
     if 'username' in data:
         data['username'] = hashlib.sha256(data['username'].encode()).hexdigest()
+    if 'email' in data:
+        data['email'] = hashlib.sha256(data['email'].encode()).hexdigest()
     return data
 
 
